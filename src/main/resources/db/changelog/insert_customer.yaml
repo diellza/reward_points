@@ -1,0 +1,23 @@
+databaseChangeLog:
+- changeSet:
+    id: INSERT_CUSTOMERS
+    author: Diellza
+    changes:
+      - loadData:
+          tableName: customer
+          file: db/data/insert_customer_data.csv
+          encoding: UTF-8
+          separator: ';'
+          columns:
+            - column:
+                name: name
+                type: STRING
+            - column:
+                name: surname
+                type: STRING
+            - column:
+                name: phone
+                type: STRING
+            - column:
+                name: address
+                type: STRING

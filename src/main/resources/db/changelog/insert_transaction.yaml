@@ -1,0 +1,26 @@
+databaseChangeLog:
+- changeSet:
+    id: INSERT_TRANSACTIONS
+    author: Diellza
+    changes:
+      - loadData:
+          tableName: transaction
+          file: db/data/insert_transaction_data.csv
+          encoding: UTF-8
+          separator: ';'
+          columns:
+            - column:
+                name: month
+                type: int
+            - column:
+                name: reward_points
+                type: double
+            - column:
+                name: total_purchase_price
+                type: double
+            - column:
+                name: transaction_date_time
+                type: datetime
+            - column:
+                name: customer_id
+                type: bigint
