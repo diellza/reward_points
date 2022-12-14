@@ -46,7 +46,7 @@ class RewardPointsCalculationSchedulerTest {
         doReturn(Arrays.asList(transaction)).when(transactionRepository).findAllByRewardPointsIsNullAndTotalPurchaseMore50();
         rewardPointsCalculationScheduler.calculatePoints();
         assertEquals(90, transaction.getRewardPoints());
-        verify(mockAppender, times(2)).doAppend(captorLoggingEvent.capture());
+        verify(mockAppender, times(1)).doAppend(captorLoggingEvent.capture());
         assertEquals("The scheduler for calculating reward points is starting for month {}", captorLoggingEvent.getAllValues().get(0).getMessage());
     }
 }
